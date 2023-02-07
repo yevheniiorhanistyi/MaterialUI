@@ -1,22 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
 import {
-  createBrowserRouter,
-  RouterProvider,
+  BrowserRouter,
+  Routes,
+  Route,
 } from "react-router-dom";
+import { ThemeProvider } from '@mui/material/styles';
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-  },
-]);
+import App from './App';
+import Authentication from './pages/Authentication/Authentication';
+import Database from './pages/Database/Database';
+import Functions from './pages/Functions/Functions';
+import Hosting from './pages/Hosting/Hosting';
+import MachineLearning from './pages/MachineLearning/MachineLearning';
+import Storage from './pages/Storage/Storage';
+
+import './index.css';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+  <ThemeProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<App/>}>
+          <Route path='authentication' element={<Authentication/>}/>
+          <Route path='database' element={<Database/>}/>
+          <Route path='functions' element={<Functions/>}/>
+          <Route path='hosting' element={<Hosting/>}/>
+          <Route path='machine-learning' element={<MachineLearning/>}/>
+          <Route path='storage' element={<Storage/>}/>
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  </ThemeProvider>
 );
