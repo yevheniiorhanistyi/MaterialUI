@@ -14,13 +14,14 @@ import Functions from './pages/Functions/Functions';
 import Hosting from './pages/Hosting/Hosting';
 import MachineLearning from './pages/MachineLearning/MachineLearning';
 import Storage from './pages/Storage/Storage';
+import { dashboardTheme } from './dashboardTheme';
 
 import './index.css';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <ThemeProvider>
+  <ThemeProvider theme={dashboardTheme}>
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<App/>}>
