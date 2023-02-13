@@ -1,39 +1,44 @@
 import { createTheme } from '@mui/material/styles';
 
 export const dashboardTheme = createTheme({
-  components: {
-    MuiButton: {
-        styleOverrides: {
-            root: {
-                fontSize: '0.875rem',
-                fontWeight: 600,
-                borderRadius: 8.5,
-                textTransform: 'none',
-                '&.MuiButton-contained': {
-                    backgroundColor: '#009be5',
-                    '&:hover': {
-                        backgroundColor: '#006db3'
+    components: {
+        MuiButton: {
+            styleOverrides: {
+                root: {
+                    fontSize: '0.875rem',
+                    fontWeight: 600,
+                    borderRadius: 8.5,
+                    textTransform: 'none',
+                    '&.MuiButton-contained': {
+                        backgroundColor: '#009be5',
+                        '&:hover': {
+                            backgroundColor: '#006db3'
+                        },
                     },
-                },
-                '&.MuiButton-outlined': {
-                    color: "#fff",
-                    borderColor: 'rgba(255, 255, 255, 0.7)',
-                    '&:hover': {
-                        backgroundColor: 'rgba(0, 0, 0, 0.04)'
+                    '&.MuiButton-outlined': {
+                        color: "#fff",
+                        borderColor: 'rgba(255, 255, 255, 0.7)',
+                        '&:hover': {
+                            backgroundColor: 'rgba(0, 0, 0, 0.04)'
+                        },
                     },
                 },
             },
         },
-    },
-    MuiSvgIcon: {
-        styleOverrides: {
-            root: {
-                fontSize: '1.7rem',
+        MuiSvgIcon: {
+            styleOverrides: {
+                root: {
+                    fontSize: '1.7rem',
+                },
             },
         },
     },
-},
-      typography: {
+    palette: {
+        white: {
+            main: '#fff',
+        },
+    },
+    typography: {
         fontFamily: [
           '-apple-system',
           'BlinkMacSystemFont',
