@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import GridWrapper from '../../components/common/GridWrapper/GridWrapper';
 import BasicCard from '../../components/BasicCard/BasicCard';
 import SearchBar from '../../components/common/SearchBar/SearchBar';
@@ -7,17 +7,19 @@ import CommonButton from '../../components/common/CommonButton/CommonButton';
 import IconButton from '@mui/material/IconButton';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import BasicModal from '../../components/common/BasicModal/BasicModal';
 import { cardHeaderStyles } from './styles';
 
 const Authentication = () => {
-    const getHeader = () => {
+    const [open, setOpen] = useState(false);
 
+    const getHeader = () => {
         const handleChange = (value) => {
             console.log(value)
         }
 
         const addUser = () => {
-            console.log('click')
+            setOpen(true)
         };
 
         return (
@@ -29,8 +31,8 @@ const Authentication = () => {
                 />
                 <Box>
                     <CommonButton 
-                        variant="contained"
                         onClick={addUser}
+                        variant="contained"
                         size="large"
                         sx={cardHeaderStyles.addUserButton}
                     >
@@ -60,6 +62,7 @@ const Authentication = () => {
                 header={getHeader()}
                 content={getContent()}
             />
+            <BasicModal open={open} onClose={() => setOpen(false)} />
         </GridWrapper>
     )
 };

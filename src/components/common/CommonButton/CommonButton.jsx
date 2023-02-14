@@ -1,6 +1,6 @@
 import Button from '@mui/material/Button';
 
-const CommonButton = ({children, color, disabled, size, variant, sx}) => {
+const CommonButton = ({children, color, disabled, size, variant, sx, onClick}) => {
     return(
             <Button
                 color={color}
@@ -8,6 +8,7 @@ const CommonButton = ({children, color, disabled, size, variant, sx}) => {
                 size={size}
                 variant={variant}
                 sx={sx}
+                onClick={onClick}
             >
                 {children}
             </Button>
@@ -15,23 +16,3 @@ const CommonButton = ({children, color, disabled, size, variant, sx}) => {
 }
 
 export default CommonButton;
-
-// const buttonStyles = {
-//     fontSize: '0.875rem',
-//     fontWeight: 600,
-//     textTransform: 'capitalize',
-//     borderRadius: 2.5,
-//     '&.MuiButton-contained': {
-//         backgroundColor: '#009be5',
-//         '&:hover': {
-//             backgroundColor: '#006db3',  
-//         }
-//     },
-//     '&.MuiButton-outlined': {
-//         color: '#fff',
-//         borderColor: '#fff',
-//         '&:hover': {
-//             backgroundColor: 'transparent',  
-//         }
-//     }
-// }
