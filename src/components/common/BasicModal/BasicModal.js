@@ -22,6 +22,7 @@ const BasicModal = ({ open, onClose, title, subTitle, content, onSubmit }) => {
                 {content}
                 <Box sx={modalStyles.buttons}>
                     <CommonButton
+                        sx={modalStyles.buttonSubmit}
                         variant="contained"
                         onClick={onSubmit}
                     >

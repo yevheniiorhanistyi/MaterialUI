@@ -20,6 +20,9 @@ export const modalStyles = {
     },
     buttons: {
         display: 'flex',
-        justifyContent: 'end',
+        justifyContent: 'end'
+    },
+    buttonSubmit: {
+        marginRight: '5px'
     }
 };
