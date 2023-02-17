@@ -13,21 +13,42 @@ import { cardHeaderStyles } from './styles';
 const Authentication = () => {
     const [open, setOpen] = useState(false);
     const [users, setUsers] = useState([]);
+    const [searchResults, setSearchResults] = useState(users);
 
     const getHeader = () => {
-        const handleChange = (value) => {
-            console.log(value)
-        }
+
+        const handleSearch = (value) => {
+            filterData(value);
+        };
+
+        const filterData = (value) => {
+            const lowercasedValue = value.toLowerCase().trim();
+
+            if(lowercasedValue === '') setUsers(searchResults);
+            else {
+                const filteredData = searchResults.filter((item) => {
+                    return Object.keys(item).some((key) => 
+                        item[key].toString().toLowerCase().includes(lowercasedValue)
+                    );
+                });
+                setUsers(filteredData);
+            };
+        };
 
         const addUser = () => {
             setOpen(true)
+        };
+
+        const refreshUsers = () => {
+            setUsers([]);
+            setSearchResults([]);
         };
 
         return (
             <Box sx={cardHeaderStyles.wrapper}>
                 <SearchBar 
                     placeholder="Search by email address, phone number, or user UID"
-                    onChange={(event) => handleChange(event.target.value)}
+                    onChange={(event) => handleSearch(event.target.value)}
                     searchBarWidth='720px'
                 />
                 <Box>
@@ -39,7 +60,7 @@ const Authentication = () => {
                     >
                         Add user
                     </CommonButton>
-                    <IconButton>
+                    <IconButton onClick={refreshUsers}>
                         <RefreshIcon />
                     </IconButton>
                 </Box>
