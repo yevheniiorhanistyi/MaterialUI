@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import GridWrapper from '../../components/common/GridWrapper/GridWrapper';
-import BasicCard from '../../components/BasicCard/BasicCard';
+import BasicCard from '../../components/common/BasicCard/BasicCard';
 import SearchBar from '../../components/common/SearchBar/SearchBar';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import CommonButton from '../../components/common/CommonButton/CommonButton';
